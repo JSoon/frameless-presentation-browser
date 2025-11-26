@@ -1,25 +1,16 @@
-const { app, BrowserWindow } = require('electron');
+const { app } = require('electron');
+const { createChildWindow } = require('./childWindow');
 
 function createWindow() {
-  // 创建浏览器窗口
-  const win = new BrowserWindow({
+  // 成都达海数字调度大屏
+  createChildWindow({
+    name: 'DaHaiDiaoDu',
+    url: 'http://10.0.100.140:8888',
     width: 3840,
     height: 1080,
-    x: 0, // 从屏幕左侧开始显示，确保跨屏
-    y: 0,
-    frame: false, // 无边框
-    resizable: true, // 尺寸可调整
-    webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false
-    }
+    x: 0,
+    y: 0
   });
-
-  // 加载指定网页
-  win.loadURL('http://10.0.100.140:8888');
-
-  // 打开开发者工具（可选，调试时使用）
-  // win.webContents.openDevTools();
 }
 
 // Electron初始化完成后创建窗口
