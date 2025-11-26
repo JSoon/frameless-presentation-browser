@@ -5,6 +5,8 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 3840,
     height: 1080,
+    x: 0, // 从屏幕左侧开始显示，确保跨屏
+    y: 0,
     frame: false, // 无边框
     resizable: true, // 尺寸可调整
     webPreferences: {
